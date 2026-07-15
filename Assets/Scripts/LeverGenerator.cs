@@ -8,8 +8,10 @@ public class LeverGenerator : MonoBehaviour
     [SerializeField] Transform chunkParent;
     [SerializeField] float chunkLen = 10f;
     [SerializeField] float moveSpeed = 8f;
+    
 
     List<GameObject> chunks = new List<GameObject>();
+    float speedMultiplier = 1f;
 
     void Start()
     {
@@ -57,7 +59,7 @@ public class LeverGenerator : MonoBehaviour
             GameObject chunk = chunks[i];
 
             //mult floats first
-            chunk.transform.Translate(-transform.forward * (moveSpeed * Time.deltaTime));
+            chunk.transform.Translate(-transform.forward * (moveSpeed * Time.deltaTime * speedMultiplier));
 
             if (chunk.transform.position.z <= Camera.main.transform.position.z - chunkLen)
             {
@@ -66,5 +68,11 @@ public class LeverGenerator : MonoBehaviour
                 SpawnChunk();
             }
         }
+    }
+
+    public void SetSpeedMultiplier(float multiplier)
+    {
+        speedMultiplier = multiplier;
+        Debug.Log("mult: " + speedMultiplier);
     }
 }
