@@ -82,6 +82,11 @@ MonoBehaviour:
   - -2.5
   - 0
   - 2.5
+  powerUpPrefabs:
+  - {fileID: 9145175261005281486, guid: da5005c0ab4724dbca177b379c1cf044, type: 3}
+  - {fileID: 9145175261005281486, guid: 61545115095c84a4e8216d76d012994d, type: 3}
+  - {fileID: 9145175261005281486, guid: 272ad52c041a246c590d0a8d2d2d059f, type: 3}
+  powerUpSpawnChance: 1
 --- !u!1 &5545921236784771643
 GameObject:
   m_ObjectHideFlags: 0
